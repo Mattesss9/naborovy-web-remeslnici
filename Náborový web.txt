@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemesBuild - Hledáme řemeslníky pro spolupráci</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .sticky-form {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            max-width: 350px;
+        }
+        @media (max-width: 1024px) {
+            .sticky-form {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                max-width: 100%;
+            }
+        }
+        .animate-bounce-slow {
+            animation: bounce 2s infinite;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .reference-card {
+            background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-pulse">
+                Hledáme <span class="text-yellow-300">ŘEMESLNÍKY</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                Připoj se k našemu týmu profesionálů! Nabízíme pravidelnou práci, férové podmínky a skvělou atmosféru. 
+                <strong>Ostrava a celá ČR čeká na tvé dovednosti!</strong>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#kontakt" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105">
+                    <i class="fas fa-phone mr-2"></i>
+                    Ozvi se nám ještě dnes!
+                </a>
+                <a href="#pozice" class="border-2 border-white hover:bg-white hover:text-gray-900 font-bold py-4 px-8 rounded-full transition-all">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    Zobraz volné pozice
+                </a>
+            </div>
+        </div>
+        <div class="absolute inset-0 opacity-10">
+            <i class="fas fa-hammer text-9xl absolute top-10 left-10 animate-bounce-slow"></i>
+            <i class="fas fa-hard-hat text-6xl absolute bottom-20 right-20 animate-pulse"></i>
+            <i class="fas fa-tools text-7xl absolute top-1/2 left-1/4 animate-bounce-slow"></i>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12 lg:pr-96">
+        
+        <!-- Hledané pozice -->
+        <section id="pozice" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-users text-blue-600 mr-3"></i>
+                Hledané pozice
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="skill-card bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
+                    <i class="fas fa-home text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Pokrývač</h3>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>• Zkušenosti s různými krytinami</li>
+                        <li>• Práce ve výškách</li>
+                        <li>• Řidičský průkaz výhodou</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-500">
+                    <i class="fas fa-building text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Fasádník</h3>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>• Zateplování budov</li>
+                        <li>• Práce s kontaktními systémy</li>
+                        <li>• Min. 2 roky praxe</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-lg border-l-4 border-yellow-500">
+                    <i class="fas fa-hammer text-3xl text-yellow-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Tesař</h3>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>• Střešní konstrukce</li>
+                        <li>• Dřevostavby</li>
+                        <li>• Vlastní nářadí výhodou</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-lg border-l-4 border-purple-500">
+                    <i class="fas fa-paint-roller text-3xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Sádrokartonář</h3>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>• Montáž sádrokartonových konstrukcí</li>
+                        <li>• Štuky a tmelovací práce</li>
+                        <li>• Preciznost v práci</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-500">
+                    <i class="fas fa-fire text-3xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Svářeč</h3>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>• Svářečský průkaz 135, 136</li>
+                        <li>• Konstrukce, potrubí</li>
+                        <li>• Zkušenosti min. 5 let</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card bg-white p-6 rounded-lg shadow-lg border-l-4 border-indigo-500">
+                    <i class="fas fa-cogs text-3xl text-indigo-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Zámečník</h3>
+                    <ul class="text-gray-600 space-y-1">
+                        <li>• Ocelové konstrukce</li>
+                        <li>• Montážní práce</li>
+                        <li>• Čtení technické dokumentace</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-gray-600 mb-4">Hledáme také: <strong>Potrubáře, Montéry, Zedníky</strong> a další řemeslné profese!</p>
+                <a href="#kontakt" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-all">
+                    Máš jinou profesi? Ozvi se!
+                </a>
+            </div>
+        </section>
+
+        <!-- Co nabízíme -->
+        <section class="mb-16 bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-gift text-green-600 mr-3"></i>
+                Co nabízíme
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-euro-sign text-2xl text-green-600 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Férové ohodnocení</h3>
+                            <p class="text-gray-600">Mzda odpovídající kvalitě tvé práce. Bez skrytých poplatků.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-calendar-check text-2xl text-blue-600 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Pravidelná práce</h3>
+                            <p class="text-gray-600">Dlouhodobé projekty i krátkodobé zakázky dle tvých možností.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-money-bill-wave text-2xl text-yellow-600 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Možnost záloh</h3>
+                            <p class="text-gray-600">Finanční zálohy pro větší projekty. Žádné čekání na výplatu.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-users text-2xl text-purple-600 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Skvělý tým</h3>
+                            <p class="text-gray-600">Pracuj s profesionály, kteří se navzájem podporují.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-truck text-2xl text-red-600 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Doprava řešena</h3>
+                            <p class="text-gray-600">Zajistíme dopravu na stavby v celé ČR.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <i class="fas fa-tools text-2xl text-indigo-600 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Kvalitní materiál</h3>
+                            <p class="text-gray-600">Pracuj s prvotřídními materiály od ověřených dodavatelů.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reference -->
+        <section class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-star text-yellow-500 mr-3"></i>
+                Naše reference
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="reference-card rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-industry text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Průmyslové haly</h3>
+                    <p class="text-gray-600">Kompletní opláštění a střešní práce pro velké průmyslové objekty v Ostravě.</p>
+                </div>
+                
+                <div class="reference-card rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-home text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Rodinné domy</h3>
+                    <p class="text-gray-600">Rekonstrukce a výstavba rodinných domů s kompletními řemeslných službami.</p>
+                </div>
+                
+                <div class="reference-card rounded-lg p-6 text-center shadow-lg">
+                    <i class="fas fa-building text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Komerční objekty</h3>
+                    <p class="text-gray-600">Fasády, interiéry a technické instalace pro kancelářské a obchodní prostory.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-16 bg-gray-100 rounded-lg p-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-question-circle text-blue-600 mr-3"></i>
+                Často kladené dotazy
+            </h2>
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg p-6 shadow">
+                    <h3 class="text-xl font-bold mb-3 text-blue-600">Jak probíhá nástup do práce?</h3>
+                    <p class="text-gray-600">Po vyplnění formuláře tě kontaktujeme do 24 hodin. Domluvíme si osobní schůzku a můžeš začít pracovat hned druhý den.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6 shadow">
+                    <h3 class="text-xl font-bold mb-3 text-green-600">Potřebuji vlastní nářadí?</h3>
+                    <p class="text-gray-600">Pro některé pozice je výhodou, ale není nutností. Základní nářadí a ochranné pomůcky zajistíme.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6 shadow">
+                    <h3 class="text-xl font-bold mb-3 text-purple-600">Jaká je výše odměny?</h3>
+                    <p class="text-gray-600">Mzda se liší podle profese a zkušeností. Nabízíme nadprůměrné ohodnocení - konkrétní částky probereme při osobním rozhovoru.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-6 shadow">
+                    <h3 class="text-xl font-bold mb-3 text-red-600">Pracujete i o víkendech?</h3>
+                    <p class="text-gray-600">Víkendová práce není povinná, ale je možná za zvýhodněné podmínky. Respektujeme work-life balance našich lidí.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-12">
+            <h2 class="text-4xl font-bold mb-6">Připraven začít?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Nepřemýšlej dlouho! Kvalitní řemeslníci jsou vždy potřeba. 
+                Vyplň formulář a začni s námi pracovat ještě tento týden.
+            </p>
+            <a href="#kontakt" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 text-lg">
+                <i class="fas fa-rocket mr-2"></i>
+                Získej práci ještě dnes!
+            </a>
+        </section>
+    </div>
+
+    <!-- Sticky Contact Form -->
+    <div class="sticky-form lg:block">
+        <div id="kontakt" class="bg-white rounded-lg shadow-2xl p-6 border-t-4 border-blue-600">
+            <h3 class="text-2xl font-bold mb-6 text-center text-gray-800">
+                <i class="fas fa-envelope text-blue-600 mr-2"></i>
+                Kontaktuj nás
+            </h3>
+            <form class="space-y-4" onsubmit="handleSubmit(event)">
+                <div>
+                    <input type="text" id="name" name="name" required 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200" 
+                           placeholder="Tvé jméno">
+                </div>
+                
+                <div>
+                    <input type="tel" id="phone" name="phone" required 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200" 
+                           placeholder="Telefon">
+                </div>
+                
+                <div>
+                    <select id="profession" name="profession" required 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                        <option value="">Vyber profesi</option>
+                        <option value="pokryvac">Pokrývač</option>
+                        <option value="fasadnik">Fasádník</option>
+                        <option value="tesar">Tesař</option>
+                        <option value="sadrokartonar">Sádrokartonář</option>
+                        <option value="svarec">Svářeč</option>
+                        <option value="zamecnik">Zámečník</option>
+                        <option value="potrubar">Potrubář</option>
+                        <option value="monter">Montér</option>
+                        <option value="zednik">Zedník</option>
+                        <option value="jine">Jiné</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <textarea id="message" name="message" rows="4" 
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200" 
+                              placeholder="Krátce se představ (zkušenosti, dostupnost...)"></textarea>
+                </div>
+                
+                <button type="submit" 
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    Odeslat poptávku
+                </button>
+                
+                <div class="text-center">
+                    <p class="text-sm text-gray-600 mb-2">Nebo zavolej přímo:</p>
+                    <a href="tel:+420123456789" class="text-blue-600 font-bold text-lg hover:text-blue-800">
+                        <i class="fas fa-phone mr-1"></i>
+                        +420 123 456 789
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">RemesBuild</h3>
+            <p class="text-gray-400 mb-4">Spojujeme kvalitní řemeslníky s atraktivními projekty</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <i class="fab fa-facebook text-2xl hover:text-blue-500 cursor-pointer"></i>
+                <i class="fab fa-instagram text-2xl hover:text-pink-500 cursor-pointer"></i>
+                <i class="fab fa-linkedin text-2xl hover:text-blue-400 cursor-pointer"></i>
+            </div>
+            <p class="text-gray-500">&copy; 2024 RemesBuild. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Získání dat z formuláře
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Simulace odeslání
+            alert(`Děkujeme ${data.name}! Tvá poptávka byla odeslána. Ozveme se ti do 24 hodin na číslo ${data.phone}.`);
+            
+            // Reset formuláře
+            event.target.reset();
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animace při scrollování
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Pozorování všech skill cards
+        document.querySelectorAll('.skill-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
