@@ -30,7 +30,7 @@ exports.handler = async (event) => {
     const files = [];
 
     await new Promise((resolve, reject) => {
-      const bb = new Busboy({ headers: { 'content-type': contentType } });
+      const bb = Busboy({ headers: { 'content-type': contentType } });
 
       bb.on('field', (name, val) => {
         fields[name] = val;
