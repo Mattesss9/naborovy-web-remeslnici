@@ -36,14 +36,15 @@ exports.handler = async (event) => {
         fields[name] = val;
       });
 
-      bb.on('file', (fieldname, file, filename, encoding, mimetype) => {
+      bb.on('file', (name, file, info) => {
+        const { filename, encoding, mimeType } = info;
         const chunks = [];
         file.on('data', (d) => chunks.push(d));
         file.on('limit', () => {});
         file.on('end', () => {
           const content = Buffer.concat(chunks);
           if (filename && content.length > 0) {
-            files.push({ filename, content, contentType: mimetype });
+            files.push({ filename, content, contentType: mimeType });
           }
         });
       });
@@ -93,7 +94,11 @@ exports.handler = async (event) => {
       subject: 'Nová poptávka z webu',
       text: textLines.join('\n'),
       html,
-      attachments: files.map((f) => ({ filename: f.filename, content: f.content, contentType: f.contentType })),
+      attachments: files.map((f) => ({
+        filename: f.filename,
+        content: f.content,
+        contentType: f.contentType
+      })),
     });
 
     return {
