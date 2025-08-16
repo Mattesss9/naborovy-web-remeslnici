@@ -26,7 +26,7 @@ npm install
 ```
 
 Soubory:
-- `Náborový web.html` – hlavní stránka
+- `naborovy-web.html` – hlavní stránka
 - `index.html` – přesměrování na hlavní stránku (kvůli defaultnímu názvu)
 - `netlify/functions/submit-form.js` – serverless funkce (Nodemailer)
 - `netlify.toml` – konfigurace functions a CORS
