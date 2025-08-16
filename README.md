@@ -14,7 +14,7 @@ Statická landing page s kontaktním formulářem s nahráním CV a odesláním 
    - `SMTP_USER` – přihlašovací e‑mail / uživatel
    - `SMTP_PASS` – heslo k SMTP nebo App Password (u Gmailu vyžadováno)
    - `FROM_EMAIL` – volitelné (výchozí je `SMTP_USER`)
-   - `TO_EMAIL` – volitelné (výchozí je `dmd.obchod@gmail.com` nebo hodnota z formuláře `to_email`)
+   - `TO_EMAIL` – volitelné (výchozí je hodnota z formuláře `to_email`)
 4. Deployujte. Netlify automaticky vytvoří endpoint `/ .netlify/functions/submit-form`.
 
 ## Lokální vývoj
